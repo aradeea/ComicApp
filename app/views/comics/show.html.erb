@@ -1,0 +1,9 @@
+<div>
+  <ul>
+    <li><%= @selected_comic.title %></li>
+    <li><%= @selected_comic.author %></li>
+    <li><%= @selected_comic.year %></li>
+    <li><%= @selected_comic.publisher %></li>
+  </ul>
+  <%= link_to("Delete", "/comics/#{@selected_comic.id}", method: :delete, data: {confirm: "Are you sure?"}) %>
+</div>
