@@ -1,0 +1,11 @@
+<h1> All comics in database: </h1>
+
+<% @comics.each do |comic|%>
+  <ul>
+  <li><%= comic.title %> </li>
+  <li><%= comic.author %> </li>
+  <li><%= comic.year %> </li>
+  <li><%= comic.publisher %> </li>
+
+</ul>
+  <% end %>

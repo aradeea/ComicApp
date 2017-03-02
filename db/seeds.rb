@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Comic.create(title: 'V for Vendetta', author: 'Michael Moore', year:'2006', publisher:'Vertigo Comics');
+Comic.create(title: 'Maus', author: 'Art Spiegelman', year:'1977', publisher:'Pantheon Books');
