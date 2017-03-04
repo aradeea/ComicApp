@@ -1,0 +1,19 @@
+<%= form_for [@my_user, @my_comic] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <br>
+  <%= f.label :year %>
+  <%= f.date_field :year %>
+  <br>
+  <%= f.label :publisher %>
+  <%= f.text_field :publisher %>
+  <br>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <br>
+  <%= f.button %>
+  <%= link_to 'Cancel', project_time_entries_path(@my_project) %>
+<% end %>

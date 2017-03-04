@@ -15,6 +15,8 @@ class ComicsController < ApplicationController
     :author => params[:comic][:author],
     :year => params[:comic][:year],
     :publisher => params[:comic][:publisher],
+    :user_id => current_user.id,
+    :price => params[:comic][:price],
     )
     @my_comic.save
     redirect_to "/comics/#{@my_comic.id}"
@@ -27,12 +29,10 @@ class ComicsController < ApplicationController
   end
 
   def edit
+    @my_user = current_user.id
+    @my_comic = (@my_user.username).comic.find params[:id]
 
-  end
-
-  def destroy
-    @selected_comic = Comic.find_by(id: params[:id])
-    @selected_comic.destroy
-    redirect_to "/comics/"
+    # @my_user = User.find params[:user_id]
+    # @my_comic = @my_user.comic.find params[:id]
   end
 end
