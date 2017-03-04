@@ -1,10 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Comic.create(title: 'V for Vendetta', author: 'Michael Moore', year:'2006', publisher:'Vertigo Comics');
+# Comic.create(title: 'Maus', author: 'Art Spiegelman', year:'1977', publisher:'Pantheon Books');
 
-Comic.create(title: 'V for Vendetta', author: 'Michael Moore', year:'2006', publisher:'Vertigo Comics');
-Comic.create(title: 'Maus', author: 'Art Spiegelman', year:'1977', publisher:'Pantheon Books');
+clark, tony, rick = User.create!([
+  {username:'Clark Kent', email:'clark@ironhack.com', password:"ironhack", password_confirmation:"ironhack"},
+  {username:'Tony Stark', email:'tony@ironhack.com', password:"ironhack", password_confirmation:"ironhack"},
+  {username:'Rick Grimes', email:'rick@ironhack.com', password:"ironhack", password_confirmation:"ironhack"}
+  ])
+#
+clark.comics.create!([{title: 'V for Vendetta', author: 'Michael Moore', year:'2006', publisher:'Vertigo Comics'},{title: 'Maus', author: 'Art Spiegelman', year:'1977', publisher:'Pantheon Books'}])
+rick.comics.create!([{title:'Watchmen', publisher:'Vertigo'}, {title:'300', publisher:'Norma'}])
