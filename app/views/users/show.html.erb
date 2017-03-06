@@ -1,8 +1,25 @@
 <% if user_signed_in? %>
 <h2> Welcome <%= current_user.username %>! <h2>
   <%=link_to 'Logout', destroy_user_session_path, method: 'DELETE' %>
+  <br>
   <%=link_to 'Edit account', "edit" %>
+  <br>
   <%= link_to "Add comic", new_comic_path(@user)%>
+<p>
+  All comics from this user:
+</p>
+<% @comicsfromuser.each do |comic|%>
+<!-- Crear variable que contenga los comics de ese user -->
+  <ul>
+  <li><%= comic.title %> </li>
+  <!-- Ruta de delete y edit no acabada!!!! -->
+  <%=link_to 'Edit comic', edit_comic_path(comic) %>
+  <br>
+  <!-- <%= link_to("Delete", comics_path(@my_comic, comic), method: :delete, data: {confirm: "Are you sure?"}) %> -->
+
+</ul>
+  <% end %>
+
 <% else %>
 <h2>Nobody logged in</h2>
 <%end%>

@@ -26,13 +26,25 @@ class ComicsController < ApplicationController
     #Enseñame este comic concreto. Despues de hacer el post
     @selected_comic = Comic.find_by(id: params[:id])
     render "show"
+    @user = User.find_by(id: current_user.id)
+    # @comics_from_user = @User.comics.all
   end
 
-  def edit
-    @my_user = current_user.id
-    @my_comic = (@my_user.username).comic.find params[:id]
+  def edit #estabas por aquí!!!
+    @user = User.find_by(id: current_user.id)
+    @selected_comic = Comic.find_by(id: params[:id])
+    @my_comic = @user.@selected_comic
+    # comics.find_by(id: current_user.id)
 
     # @my_user = User.find params[:user_id]
     # @my_comic = @my_user.comic.find params[:id]
   end
+
+# def destroy
+#   @my_user = current_user.id
+#     @my_comic = @my_project.time_entries.find params[:id]
+#     @my_entry.destroy
+#     redirect_to "/projects/#{@my_project.id}/time_entries"
+# end
+
 end

@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(params[:id])
+    @user = User.find_by(id: current_user.id)
+    @comicsfromuser = @user.comics.all
     render :show
   end
 end
