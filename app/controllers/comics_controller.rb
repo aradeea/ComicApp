@@ -31,9 +31,10 @@ class ComicsController < ApplicationController
   end
 
   def edit #estabas por aquí!!!
-    @user = User.find_by(id: current_user.id)
     @selected_comic = Comic.find_by(id: params[:id])
-    @my_comic = @user.@selected_comic
+    @my_user = User.find_by(id: @selected_comic.user_id)
+    # [:user_id]
+    # @my_comic = @my_user.@selected_comic
     # comics.find_by(id: current_user.id)
 
     # @my_user = User.find params[:user_id]

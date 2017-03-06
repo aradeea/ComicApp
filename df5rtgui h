@@ -1,0 +1,35 @@
+[33mcommit 3278df939b0c5eb93d0833cd94e53fbe9ea58423[m
+Author: Aradeea <anamarlopezcontreras@gmail.com>
+Date:   Mon Mar 6 23:42:56 2017 +0100
+
+    managed to put edit link to comics in user profile. Edit page not working though
+
+[33mcommit fe38e18f9c984e96876cb507f170757e52f0e190[m
+Author: Aradeea <anamarlopezcontreras@gmail.com>
+Date:   Sat Mar 4 19:47:04 2017 +0100
+
+    Add edit comics, not working
+
+[33mcommit 9fd0ea1af711255b8595c1a5f1a7b7e72b83a581[m
+Author: Aradeea <anamarlopezcontreras@gmail.com>
+Date:   Sat Mar 4 15:12:01 2017 +0100
+
+    Add user_id to comics, seed of users with comics
+
+[33mcommit 31c3cf36c90f476aad5f7a926131cc6ea478745e[m
+Author: Aradeea <anamarlopezcontreras@gmail.com>
+Date:   Thu Mar 2 20:23:36 2017 +0100
+
+    Add User devise. Index, new and show working for comics controller
+
+[33mcommit de6d5fa94538079af8d80eaddc3b35461d4ce9b9[m
+Author: Aradeea <anamarlopezcontreras@gmail.com>
+Date:   Thu Mar 2 19:34:43 2017 +0100
+
+    Bootstrap installed, but deleted bootstrap gem from gemfile
+
+[33mcommit 13bddc7287767de0b5e0c154ba33d35bb528a134[m
+Author: Aradeea <anamarlopezcontreras@gmail.com>
+Date:   Thu Mar 2 18:36:43 2017 +0100
+
+    Initial commit
