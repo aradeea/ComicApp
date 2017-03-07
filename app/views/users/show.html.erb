@@ -15,7 +15,7 @@
   <!-- Ruta de delete no acabada!!!! -->
   <%=link_to 'Edit comic', edit_comic_path(comic) %>
   <br>
-  <%=link_to("Delete", comics_path(comic), method: :delete, data: {confirm: "Are you sure?"}) %>
+  <%=link_to("Delete", "/comics/#{comic.id}", method: :delete, data: {confirm: "Are you sure?"})%>
 
 </ul>
   <% end %>

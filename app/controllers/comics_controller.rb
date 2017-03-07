@@ -19,7 +19,7 @@ class ComicsController < ApplicationController
             price: params[:comic][:price]
         )
         @my_comic.save
-        redirect_to "/comics/#{@my_comic.id}"
+      redirect_to "/users/#{current_user.id}/"
     end
 
     def show
@@ -30,27 +30,18 @@ class ComicsController < ApplicationController
         # @comics_from_user = @User.comics.all
     end
 
-    def edit # TODO: estabas por aquí!!!
-        # @selected_comic = Comic.find_by(id: params[:id])
-        # @my_user = User.find_by(id: @selected_comic.user_id)
+    def edit
         @comic = current_user.comics.find(params[:id])
-        # [:user_id]
-        # @my_comic = @my_user.@selected_comic
-        # comics.find_by(id: current_user.id)
-
-        # @my_user = User.find params[:user_id]
-        # @my_comic = @my_user.comic.find params[:id]
     end
 
     def update
         @comic = current_user.comics.find(params[:id])
 
-        # if
-        @comic.update(comic_params)
+        if @comic.update(comic_params)
         redirect_to "/users/#{current_user.id}/"
-        # else
-        #   render "edit"
-        # end
+        else
+          render "edit"
+        end
     end
 
     def destroy
