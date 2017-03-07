@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show]
+
 #Antes de cada acción authenticate_user.. pero solo hazlo en show
 
   def index
@@ -12,4 +13,9 @@ class UsersController < ApplicationController
     @comicsfromuser = @user.comics.all
     render :show
   end
+
+  def user_params
+    params.require(:entry).permit(:username, :logo)
+  end
+
 end
