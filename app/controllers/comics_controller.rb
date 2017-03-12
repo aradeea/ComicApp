@@ -1,6 +1,7 @@
 class ComicsController < ApplicationController
     def index
         @comics = Comic.all
+        @transaction = Transaction.new
         render 'index'
     end
 

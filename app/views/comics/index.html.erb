@@ -7,6 +7,9 @@
   <li><%= comic.author %> </li>
   <li><%= comic.year %> </li>
   <li><%= comic.publisher %> </li>
+  <% if user_signed_in? %>
+  <%= button_to 'Purchase', {:controller => "transactions", :action => "create", :seller_id => comic.user_id, :buyer_id=> current_user.id, :comic_id => comic.id} , {:method=>:post}  %>
+  <% end %>
 
 </ul>
   <% end %>
