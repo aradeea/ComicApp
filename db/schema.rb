@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307200842) do
+ActiveRecord::Schema.define(version: 20170312113326) do
 
   create_table "comics", force: :cascade do |t|
     t.string   "title"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20170307200842) do
     t.integer  "user_id"
     t.float    "price"
     t.index ["user_id"], name: "index_comics_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "buyer_id"
+    t.integer "seller_id"
+    t.integer "comic_id"
+    t.index ["buyer_id"], name: "index_transactions_on_buyer_id"
+    t.index ["comic_id"], name: "index_transactions_on_comic_id"
+    t.index ["seller_id"], name: "index_transactions_on_seller_id"
   end
 
   create_table "users", force: :cascade do |t|

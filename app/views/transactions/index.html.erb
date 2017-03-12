@@ -1,0 +1,12 @@
+<div>
+    <h1>
+      All these comics are in your shopping basket:
+    </h1>
+
+    <% current_user.transactions each do |transaction|%>
+    <ul>
+        <li><%= transaction.comic.title %>
+        </li>
+    </ul>
+    <% end %>
+</div>
